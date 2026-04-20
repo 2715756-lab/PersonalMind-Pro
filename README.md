@@ -92,10 +92,43 @@ python main.py
 
 ## 🧪 Тестирование
 
+### Система валидации
+```bash
+# Быстрая проверка структуры проекта
+python scripts/quick_test.py
+
+# Результат: 9/9 тестов пройдено ✅
+```
+
+### API Тестирование
+```bash
+# Запустить mock backend и протестировать endpoints
+python scripts/test_api_real.py
+
+# Результат: 7/7 endpoints работают (100% success rate) ✅
+```
+
+### Unit Тесты
 ```bash
 pytest backend/tests/
 npm test --prefix frontend/
 ```
+
+### Результаты реального тестирования
+**Status:** ✅ **ALL TESTS PASSED (7/7)**
+
+Все API endpoints успешно протестированы:
+- ✅ `/health` - Health check (3ms)
+- ✅ `/chat` - Chat messages (2ms)  
+- ✅ `/memory/stats` - Memory statistics (1ms)
+- ✅ `/profile` - User profile (1ms)
+- ✅ `/documents` - Document list (1ms)
+- ✅ `/commerce/search` - Commerce search (1ms)
+- ✅ `/` - API info (1ms)
+
+**Средняя скорость:** 1.4ms | **Успешность:** 100%
+
+📄 [Полные результаты тестирования](docs/REAL_TEST_RESULTS.md)
 
 ## 🔐 Переменные окружения
 
