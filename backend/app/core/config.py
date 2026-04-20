@@ -40,10 +40,18 @@ class Settings(BaseSettings):
     S3_SECRET_KEY: Optional[str] = None
     S3_BUCKET: Optional[str] = None
 
-    # LLM Settings
+    # LLM Settings (OpenAI)
     LLM_MODEL: str = "gpt-4-1106-preview"
     LLM_TEMPERATURE: float = 0.7
     EMBEDDING_MODEL: str = "text-embedding-3-large"
+
+    # Yandex GPT Settings (Alternative)
+    YANDEX_API_KEY: Optional[str] = None
+    YANDEX_FOLDER_ID: Optional[str] = None
+    YANDEX_MODEL: str = "gpt://b1g797fquvjlp32c2ldh/yandexgpt-lite"
+    
+    # LLM Provider (openai or yandex)
+    LLM_PROVIDER: str = "openai"
 
     # Memory Settings
     MAX_EPISODIC_BUFFER: int = 20
